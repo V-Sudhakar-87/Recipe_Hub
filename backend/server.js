@@ -2,7 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-
+const path = require('path');
 
 dotenv.config();//load the file of .env for mango secret
 
@@ -36,3 +36,20 @@ const authRoutes = require('./routes/auth');//Login API
 app.use('/api/auth', authRoutes); 
 const favoritesRoutes = require('./routes/favorites'); //Favorite API
 app.use('/api/favorites', favoritesRoutes);
+//frontend
+app.use(express.static(path.join(__dirname, 'public')));
+app.get('/login', (req, res) => {
+    // public/login/index.html ஃபைலை அனுப்பவும்
+    res.sendFile(path.resolve(__dirname, 'public', 'login', 'index.html'));
+});
+app.get('/', (req, res) => {
+    // public/home/home.html ஃபைலை அனுப்பவும்
+    res.sendFile(path.resolve(__dirname, 'public', 'home', 'home.html')); 
+});
+app.get('/favorites', (req, res) => {
+    // public/favorite/fav.html ஃபைலை அனுப்பவும்
+    res.sendFile(path.resolve(__dirname, 'public', 'favorite', 'fav.html'));
+});
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'public', 'home', 'home.html'));
+});
