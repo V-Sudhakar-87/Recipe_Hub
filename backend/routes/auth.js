@@ -2,13 +2,12 @@
 
 const express = require('express');
 const router = express.Router();
-const jwt = require('jsonwebtoken');  // 👈 இது கண்டிப்பாக இருக்க வேண்டும்
+const jwt = require('jsonwebtoken');  // 👈
 const User = require('../models/User'); 
 
-// --- Sign Up Route ---
+//  Sign Up Route 
 router.post('/signup', async (req, res) => {
     const { name,email, password } = req.body;
-    // 👇 ஒருவேளை name இல்லன்னா, இங்கே ஒரு சரிபார்ப்பு சேர்க்கவும்
     if (!name || !email || !password) {
         return res.status(400).json({ message: "Please enter all fields" });
     }
@@ -17,9 +16,8 @@ router.post('/signup', async (req, res) => {
         if (user) return res.status(400).json({ message: 'User already exists' });
 
         user = new User({ name, email, password });
-        await user.save(); // Password இங்கே தானாக Hash செய்யப்படும்
+        await user.save(); // automatically Password Hash 
 
-        // Sign Up வெற்றிகரமானதும், Login போல ஒரு Token-ஐ அனுப்பலாம்
         const payload = { user: { id: user.id, email: user.email } };
         jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' }, (err, token) => {
             if (err) throw err;
