@@ -1,0 +1,221 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container
+ {
+    display: flex;
+    width: 900px;
+    max-width: 90%;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.image-panel {
+    flex: 1;
+    background: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=900') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.image-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.image-panel > * {
+    position: relative;
+    z-index: 2;
+}
+
+.image-panel .logo {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.image-panel h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.form-panel {
+    flex: 1;
+    padding: 50px;
+}
+
+.form-panel h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.tab-buttons {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.tab-buttons button {
+    flex: 1;
+    padding: 12px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #888;
+}
+
+.tab-buttons button.active {
+    background: #6ab04c;
+    color: white;
+    border-radius: 5px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.options label {
+    display: flex;
+    align-items: center;
+    color: #555;
+}
+
+.options input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.options a {
+    color: #6ab04c;
+    text-decoration: none;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: #6ab04c;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+    background: #5a9a41;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: #6ab04c;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer; 
+}
+
+.hidden-form {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .login-container {
+
+        max-width: 500px;
+        flex-direction: column;
+    }
+    
+    .image-panel {
+        height: 180px;
+        padding: 20px;
+        border-radius: 15px 15px 0 0;
+        display: none; 
+    }
+    
+    .form-panel {
+        padding: 30px;
+    }
+}
+
+/* Mobile View  */
+@media (max-width: 550px) {
+    .login-container {
+        max-width: 95%; 
+        box-shadow: none; 
+    }
+    
+    .form-panel h3 {
+        font-size: 20px;
+    }
+
+    .tab-buttons button {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .social-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+}

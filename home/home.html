@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecipeHub - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+
+            <a href="home.html" class="logo">
+                <i class="fas fa-utensils"></i> RecipeHub
+            </a>
+
+            <form class="search-form" id="search-form">
+                <input type="text" id="search-input" placeholder="Search for recipes...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+
+            <ul class="nav-links">
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="../favorites/fav.html">Favorites</a></li>
+                <li class="settings-item">
+                    <a href="#" id="settings-btn">Settings <i class="fas fa-caret-down"></i></a>
+
+                    <div class="settings-menu" id="settings-menu">
+                        <div class="user-info">
+                            <i class="fas fa-user-circle"></i>
+                            <span id="settings-display-name">Username</span>
+                            <span id="settings-display-email">user@gmail.com</span>
+                        </div>
+                        <div class="theme-switch-container">
+                            <span>Dark Theme</span>
+                            <label class="switch">
+                                <input type="checkbox" id="dark-theme-toggle">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <a href="" class="logout-btn" id="logout-btn-id">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2 id="recipe-heading">Our Recommendations</h2>
+            <div class="recipe-grid" id="recipe-container"></div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

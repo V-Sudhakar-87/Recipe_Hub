@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecipeHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="login-container">
+        
+        <div class="image-panel">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+            </div>
+            <h2>Welcome to RecipeHub!</h2>
+            <p>Find and save your favorite recipes.</p>
+        </div>
+
+        <div class="form-panel">
+            <h3>Log In or Sign Up</h3>
+            
+            <div class="tab-buttons">
+                <button id="login-tab" class="active">LOG IN</button>
+                <button id="signup-tab">SIGN UP</button>
+            </div>
+
+            <form id="login-form" action="#">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email Address" id="login-email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" id="login-password" name="password" required>
+                </div>
+                <div class="options">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" class="login-btn">LOG IN</button>
+            </form>
+
+            <form id="signup-form" action="#" class="hidden-form">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" name="name" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email Address" id="signup-email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Create Password" id="signup-password" name="password" required>
+                </div>
+                <button type="submit" class="login-btn">SIGN UP</button>
+            </form>
+
+            <div class="signup-link">
+                <p id="bottom-text">Don't have an account? <a href="#" id="bottom-link">Sign Up</a></p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
