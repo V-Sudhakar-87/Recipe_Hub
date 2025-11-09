@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken'); 
 const User = require('../models/User'); 
+const { registerUser, authUser } = require('../controllers/authController');
 
 //put the Sign Up data to our dtabase
 router.post('/signup', async (req, res) => {
@@ -52,5 +53,6 @@ router.post('/login', async (req, res) => {
         res.status(500).send('Server Error during login');
     }
 });
-
+router.post('/register', registerUser);
+router.post('/login', authUser);
 module.exports = router;

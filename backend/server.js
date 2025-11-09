@@ -35,21 +35,26 @@ app.use(cors());
 const authRoutes = require('./routes/auth');//Login API
 app.use('/api/auth', authRoutes); 
 const favoritesRoutes = require('./routes/favorites'); //Favorite API
-app.use('/api/favorites', favoritesRoutes);
+app.use('/api/favorites',authmiddleware ,favoritesRoutes);
 //frontend
 app.use(express.static(path.join(__dirname, 'public')));
+
+//initial login page
 app.get('/login', (req, res) => {
-    // public/login/index.html ஃபைலை அனுப்பவும்
     res.sendFile(path.resolve(__dirname, 'public', 'login', 'index.html'));
 });
+
+//redirect to home
 app.get('/', (req, res) => {
-    // public/home/home.html ஃபைலை அனுப்பவும்
     res.sendFile(path.resolve(__dirname, 'public', 'home', 'home.html')); 
 });
+
+//redirect to favorite
 app.get('/favorites', (req, res) => {
-    // public/favorite/fav.html ஃபைலை அனுப்பவும்
     res.sendFile(path.resolve(__dirname, 'public', 'favorite', 'fav.html'));
 });
+
+// home
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'public', 'home', 'home.html'));
 });
