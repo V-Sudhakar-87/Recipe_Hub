@@ -35,7 +35,7 @@ app.use(cors());
 const authRoutes = require('./routes/auth');//Login API
 app.use('/api/auth', authRoutes); 
 const favoritesRoutes = require('./routes/favorites'); //Favorite API
-app.use('/api/favorites',authmiddleware ,favoritesRoutes);
+app.use('/api/favorites',authMiddleware ,favoritesRoutes);
 //frontend
 app.use(express.static(path.join(__dirname, 'public')));
 
