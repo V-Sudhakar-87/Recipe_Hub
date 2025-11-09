@@ -8,7 +8,7 @@ const settingsMenu = document.getElementById('settings-menu');
 const SEARCH_API_URL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 const DEFAULT_API_URL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=chicken'; 
 
-const API_URL = 'http://your-app-name.onrender.com/api/favorites';
+const API_URL = '/api/favorites';
 
 const userName = localStorage.getItem('userName');
 const userEmail = localStorage.getItem('userEmail');

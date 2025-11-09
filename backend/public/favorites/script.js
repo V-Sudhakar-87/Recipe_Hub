@@ -4,7 +4,7 @@ const settingsBtn = document.getElementById('settings-btn');
 const settingsMenu = document.getElementById('settings-menu');
 const logoutBtn = document.querySelector('.logout-btn');
 
-const API_URL = 'http://your-app-name.onrender.com/api/favorites';
+const API_URL = '/api/favorites';
 
 const userName = localStorage.getItem('userName');
 const userEmail = localStorage.getItem('userEmail');

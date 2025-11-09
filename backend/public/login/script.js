@@ -5,7 +5,7 @@ const signupForm = document.getElementById('signup-form');
 const bottomText = document.getElementById('bottom-text');
 const bottomLink = document.getElementById('bottom-link');
 
-const API_URL = 'http://your-app-name.onrender.com/api/auth';
+const API_URL = '/api/auth';
 
 // user is already logged in
 (function checkLoggedIn() {
