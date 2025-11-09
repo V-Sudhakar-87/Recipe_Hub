@@ -1,12 +1,11 @@
 // backend/models/User.js
-
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs'); // Password-ஐ Hash செய்ய இது தேவை
+const bcrypt = require('bcryptjs'); // Password Hash 
 
 const UserSchema = new mongoose.Schema({
    name: {
         type: String,
-        required: true, // Name கட்டாயம் தேவை
+        required: true, 
         trim: true 
     },
     email: {
