@@ -3,7 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const path = require('path');
-
+const authMiddleware = require('./middleware/authMiddleware');
 dotenv.config();//load the file of .env for mango secret
 
 const app = express();
