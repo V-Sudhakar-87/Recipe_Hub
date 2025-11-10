@@ -61,7 +61,7 @@ loginForm.addEventListener('submit', async (e) => {
     const password = loginForm.password.value;
     
     try {
-        const response = await fetch(`${RENDER_BACKEND_URL}/login`, {
+        const response = await fetch(`${RENDER_BACKEND_URL}/api/auth/signup`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
