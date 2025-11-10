@@ -61,11 +61,11 @@ app.get('/', (req, res) => {
 });
 
 // login page
-app.get('/login', (req, res) => {
+app.get('/login', (req, res) => {/*
     res.sendFile(path.resolve(__dirname, 'public', 'login', 'index.html'));
-});
+*/});
 
 // favorites page
-app.get('/favorites', (req, res) => {
+app.get('/favorites', (req, res) => {/*
     res.sendFile(path.resolve(__dirname, 'public', 'favorite', 'fav.html'));
-});
+*/});
