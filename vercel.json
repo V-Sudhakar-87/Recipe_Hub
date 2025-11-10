@@ -1,0 +1,37 @@
+{
+  "public": true,
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://recipe-hub-api.onrender.com/api/$1"
+    }
+  ],
+  "builds": [
+    {
+      "src": "backend/public/**/*.html",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/home/home.html"
+    },
+    {
+      "src": "/login",
+      "dest": "/login/index.html"
+    },
+    {
+      "src": "/favorites",
+      "dest": "/favorite/fav.html"
+    },
+    {
+      "src": "/home",
+      "dest": "/home/home.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
