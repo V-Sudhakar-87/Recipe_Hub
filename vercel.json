@@ -14,23 +14,23 @@
   ],
   "routes": [
     {
-      "src": "/",
+      "src": "/(.*\\.(?:css|js|png|jpg|jpeg|gif|svg))",
       "dest": "/home/home.html"
     },
     {
-      "src": "/login",
+      "src": "/(.*\\.(?:css|js|png|jpg|jpeg|gif|svg))",
       "dest": "/login/index.html"
     },
     {
-      "src": "/favorites",
+      "src": "/(.*\\.(?:css|js|png|jpg|jpeg|gif|svg))",
       "dest": "/favorite/fav.html"
     },
     {
-      "src": "/home",
+      "src": "/(.*\\.(?:css|js|png|jpg|jpeg|gif|svg))",
       "dest": "/home/home.html"
     },
     {
-      "src": "/(.*)",
+      "src": "/(.*\\.(?:css|js|png|jpg|jpeg|gif|svg))",
       "dest": "/$1"
     }
   ]
