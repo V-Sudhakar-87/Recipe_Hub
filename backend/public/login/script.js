@@ -5,6 +5,7 @@ const signupForm = document.getElementById('signup-form');
 const bottomText = document.getElementById('bottom-text');
 const bottomLink = document.getElementById('bottom-link');
 
+const RENDER_BACKEND_URL = "https://recipe-search-with-favoritrs.onrender.com";
 const API_URL = '/api/auth';
 
 // user is already logged in
@@ -60,7 +61,7 @@ loginForm.addEventListener('submit', async (e) => {
     const password = loginForm.password.value;
     
     try {
-        const response = await fetch(`${API_URL}/login`, {
+        const response = await fetch(`${RENDER_BACKEND_URL}/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })

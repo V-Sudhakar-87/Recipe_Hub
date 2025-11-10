@@ -4,6 +4,7 @@ const settingsBtn = document.getElementById('settings-btn');
 const settingsMenu = document.getElementById('settings-menu');
 const logoutBtn = document.querySelector('.logout-btn');
 
+const RENDER_BACKEND_URL = "https://recipe-hub-api.onrender.com";
 const API_URL = '/api/favorites';
 
 const userName = localStorage.getItem('userName');
@@ -53,7 +54,7 @@ async function fetchUserFavoriteIds() {
     
     try {
         
-        const response = await fetch(`${API_URL}`, {
+        const response = await fetch(`${RENDER_BACKEND_URL}/api/favorites`, {
             method: 'GET', 
             headers: { 'Authorization': `Bearer ${token}` }
         });
