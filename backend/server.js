@@ -57,6 +57,6 @@ app.get('/login', (req, res) => {
 app.get('/favorites', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../public/favorite/fav.html'));
 });
-app.get('*', (req, res) => {
+app.use( (req, res) => {
     res.sendFile(path.resolve(__dirname, '../public/login/index.html'));
 });
