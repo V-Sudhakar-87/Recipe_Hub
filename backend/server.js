@@ -33,7 +33,7 @@ mongoose.connect(MONGO_URI)
 
 
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 const authRoutes = require('./routes/auth'); // Login API
 app.use('/api/auth', authRoutes); 
@@ -45,18 +45,18 @@ app.use('/api/favorites', authMiddleware, favoritesRoutes);
 
 // Root (/) path redirect to home
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'public', 'home', 'home.html')); 
+    res.sendFile(path.resolve(__dirname, '../public/home/home.html')); 
 });
 
 // login page
 app.get('/login', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'public', 'login', 'index.html'));
+    res.sendFile(path.resolve(__dirname, '../public/login/index.html'));
 });
 
 // favorites page
 app.get('/favorites', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'public', 'favorite', 'fav.html'));
+    res.sendFile(path.resolve(__dirname, '../public/favorite/fav.html'));
 });
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'public', 'login', 'index.html'));
+    res.sendFile(path.resolve(__dirname, '../public/login/index.html'));
 });
