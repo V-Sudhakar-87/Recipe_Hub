@@ -54,7 +54,7 @@ async function fetchUserFavoriteIds() {
     
     try {
         
-        const response = await fetch(`${RENDER_BACKEND_URL}/api/favorites`, {
+        const response = await fetch(`${API_URL}`, {
             method: 'GET', 
             headers: { 'Authorization': `Bearer ${token}` }
         });

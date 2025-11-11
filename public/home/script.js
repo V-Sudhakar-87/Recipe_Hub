@@ -8,7 +8,6 @@ const settingsMenu = document.getElementById('settings-menu');
 const SEARCH_API_URL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 const DEFAULT_API_URL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=chicken'; 
 
-const RENDER_BACKEND_URL = "https://recipe-search-with-favoritrs.onrender.com";
 const API_URL = '/api/favorites';
 
 const userName = localStorage.getItem('userName');
@@ -140,7 +139,7 @@ async function getFavoritesFromServer() {
     }
 
     try {
-        const response = await fetch(`${RENDER_BACKEND_URL}/api/favorites`, {
+        const response = await fetch(`${API_URL}`, {
             method: 'GET',
             headers: { 'Authorization': `Bearer ${token}` }
         });
@@ -173,7 +172,7 @@ async function toggleFavorite(meal) {
     const recipeId = meal.idMeal;
 
     try {
-        const response = await fetch(`${RENDER_BACKEND_URL}/api/favorites`, {
+        const response = await fetch(`${API_URL}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -13,19 +13,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware Setup
 app.use(express.json()); 
 const cors = require('cors');
-const VERCEL_PRODUCTION_URL="https://recipe-hub-pi-gold.vercel.app/";
-const corsOptions = {
-    // 'origin' தான் அனுமதி கொடுக்க வேண்டிய Web Address-கள்.
-    origin: [
-        VERCEL_PRODUCTION_URL, 
-        'http://localhost:3000', 
-        'http://localhost:5000' 
-    ], 
-    credentials: true, 
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'], 
-}; 
-app.use(cors(corsOptions)); 
+app.use(cors()); 
 
 // --- Database Connection ---
 const MONGO_URI = process.env.MONGO_URI;
@@ -61,11 +49,11 @@ app.get('/', (req, res) => {
 });
 
 // login page
-app.get('/login', (req, res) => {/*
+app.get('/login', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'public', 'login', 'index.html'));
-*/});
+});
 
 // favorites page
-app.get('/favorites', (req, res) => {/*
+app.get('/favorites', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'public', 'favorite', 'fav.html'));
-*/});
+});

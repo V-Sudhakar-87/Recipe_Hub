@@ -50,6 +50,7 @@ router.get('/', protect, async (req, res) => {
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
+
         res.json({ favorites: user.favorites });
 
     } catch (error) {
